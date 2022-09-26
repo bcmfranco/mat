@@ -1,0 +1,66 @@
+#container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 300px 100px 20px;
+    height: 400px;
+}
+
+#send{
+    height: 100px;
+    margin: 30px 0px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+#target{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 120px 60px 120px;
+    text-align: center;
+}
+
+#target div{
+    display: grid;
+    align-items: center;
+    font-size: 40px;
+}
+
+#target #operator{
+    font-size: 36px;
+}
+
+#diana{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+#diana input{
+    height: 80px;
+    width: 300px;
+    border: none;
+    font-size: 40px;
+    display: grid;
+    align-items: center;
+    text-align: center;
+    font-family: monospace;
+}
+
+#send{
+    background-color: var(--fonts);
+    color: var(--back);
+    font-size: 40px;
+}
+
+
+/* VARS */
+
+:root {
+    /* light mode */
+    --borders: rgb(19, 19, 19);
+    --fonts: rgb(46, 46, 46);
+    --shadows: rgb(114, 114, 114);
+    --filling: rgb(140, 140, 140);
+    --back: rgb(247, 247, 247);
+}
