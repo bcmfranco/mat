@@ -1,8 +1,27 @@
-#container{
+#cointainer{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 300px 100px 20px;
-    height: 400px;
+    grid-template-rows: 400px 100px auto; 
+}
+
+#content{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 300px 100px;
+    margin: 10px 0px;
+}
+
+#board{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 20px 80px;
+    margin: 10px 0px;
+    font-size: 40px;
+    text-align: center;
+}
+
+#board #time{
+    background-color: var(--fonts);
 }
 
 #send{

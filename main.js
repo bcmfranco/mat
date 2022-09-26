@@ -23,6 +23,9 @@ function calc(first, second, tri){
         var response = true;
     }
 
+    $$('#response').set('text', response);
+
+
     return response;
 }
 
