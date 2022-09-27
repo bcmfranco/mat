@@ -5,8 +5,23 @@ var operator = "+"; // Operador
 var first = Math.round(Math.random()*100, 0); // Número first del target
 var second = Math.round(Math.random()*100, 0); // Número second del target
 var tri = 0;
+var score = 0;
 
 // Functions
+function provide(){ // Genera dos nuevos números aleatorios
+
+    console.log("hi");
+
+    first = Math.round(Math.random()*100, 0);
+    second = Math.round(Math.random()*100, 0); 
+
+    return [
+        first,
+        second
+    ]
+
+}
+
 function calc(first, second, tri){ // Response si el resultado enviado por el usuario es correcto
     var real_result = first+second;
 
@@ -38,21 +53,21 @@ function start(){
     $$('#first').set('text', first);
     $$('#second').set('text', second);
 
-    var starting_counter = 5;
-    var interval = setInterval(function() {
-        starting_counter--;
+    // var starting_counter = 5;
+    // var interval = setInterval(function() {
+    //     starting_counter--;
 
-        var percentage = 100/5*starting_counter;
-        $$('#time_barr').setStyle('width', percentage+'%');
+    //     var percentage = 100/5*starting_counter;
+    //     $$('#time_barr').setStyle('width', percentage+'%');
 
-        if (starting_counter == 0) {
-            clearInterval(interval);
-            game_over();
-        }
+    //     if (starting_counter == 0) {
+    //         clearInterval(interval);
+    //         game_over();
+    //     }
     
-        return starting_counter;
+    //     return starting_counter;
     
-    }, 1000);
+    // }, 1000);
 }
 //////
 
@@ -65,6 +80,18 @@ $$('#start').addEvent('click', function(event){
 $$('#send').addEvent('click', function(event){
     var tri = $$('input[name=diana_input]').get('value')[0];
     var resulting = calc(first, second, tri);
+    $$('input[name=diana_input]').set('value', '');
+
+    if(resulting == true){
+        score++
+
+        provide();
+
+        $$('#first').set('text', first);
+        $$('#second').set('text', second);
+        $$('#score').set('text', score);
+
+    }
 });
 
 // Hay que hacerle una función de stop para que deje de bajar la barra
