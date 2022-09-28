@@ -30,11 +30,13 @@ function calc(first, second, tri){ // Response si el resultado enviado por el us
 
     if(real_result != tried_result){
         var response = false;
+        var response_text = "Yep";
     } else {
         var response = true;
+        var response_text = "Nope";
     }
 
-    $$('#response').set('text', response);
+    $$('#response').set('text', response_text);
 
 
     return response;
