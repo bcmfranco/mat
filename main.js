@@ -44,14 +44,13 @@ function calc(first, second, tri){ // Response si el resultado enviado por el us
 }
 
 function game_over(){
-    $$('#send').set('text', '');
-    $$('#response').set('text', 'TIME OUT');
+    score = 0;
+    $$('#score').set('text', score);
 }
 
 function start(){
 
-    $$('#first').set('text', first);
-    $$('#second').set('text', second);
+    provide();
 
     // var starting_counter = 5;
     // var interval = setInterval(function() {
@@ -74,10 +73,17 @@ function start(){
 // Course
 // Render
 $$('#start').addEvent('click', function(event){
+    game_over();
     start();
+
+    $$('#send').set('text', 'SEND');
+    $$('#first').set('text', first);
+    $$('#second').set('text', second);
+
 });
 
 $$('#send').addEvent('click', function(event){
+
     var tri = $$('input[name=diana_input]').get('value')[0];
     var resulting = calc(first, second, tri);
     $$('input[name=diana_input]').set('value', '');
@@ -91,8 +97,7 @@ $$('#send').addEvent('click', function(event){
         $$('#second').set('text', second);
         $$('#score').set('text', score);
 
+    } else {
+        $$('#send').set('text', '');
     }
 });
-
-// Hay que hacerle una función de stop para que deje de bajar la barra
-// y muestre el resultado por encima del time out
