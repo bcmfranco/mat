@@ -6,12 +6,10 @@ var first = Math.round(Math.random()*100, 0); // Número first del target
 var second = Math.round(Math.random()*100, 0); // Número second del target
 var tri = 0;
 var score = 0;
+var hiscore = 0;
 
 // Functions
 function provide(){ // Genera dos nuevos números aleatorios
-
-    console.log("hi");
-
     first = Math.round(Math.random()*100, 0);
     second = Math.round(Math.random()*100, 0); 
 
@@ -19,7 +17,6 @@ function provide(){ // Genera dos nuevos números aleatorios
         first,
         second
     ]
-
 }
 
 function calc(first, second, tri){ // Response si el resultado enviado por el usuario es correcto
@@ -91,11 +88,18 @@ $$('#send').addEvent('click', function(event){
     if(resulting == true){
         score++
 
+        if(score > hiscore){
+            console.log("hi");
+            hiscore = score;
+            $$('#hiscore').set('text', hiscore);
+        }
+
         provide();
 
         $$('#first').set('text', first);
         $$('#second').set('text', second);
         $$('#score').set('text', score);
+
 
     } else {
         $$('#send').set('text', '');
